@@ -7,50 +7,10 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mustache.js"></script>
         <script src="js/aerogear.min.js"></script>
-        <script>
-            
-        
-            
-            $(function() {
-                var pipesWeb, pipesData;
-            
-                var pipes = AeroGear.Pipeline([
-                    {
-                        name: "pipes",
-                        settings: {
-                            url: "./pipes"
-                        }
-                    }
-                ]),
-                
-                Pipes = pipes.pipes[ "pipes" ];
-            
-                showPipes = function() {
-                    pipesData = Pipes.read();
-                    pipesWeb = $.get("./pipes");
-            
-                    $.when(pipesWeb, pipesData).then(function(web, data) {
-                        console.log(web)
-                        console.log(data)
-                
-                        $('#app').html(web[0] + " " + data[0][0]);
-                        $('#appForm #submit').on('click', function() {
-                                window.alert('saving')
-                                var saveOp = Pipes.save({'name':name});
-                                $.when(saveOp).then(function(){window.alert('saved')});
-                                return false;
-                            });
-                
-                    });
-        
-                };    
 
-                $('nav #pipes').on("click", showPipes);
-
-            });
-            
-        </script>
+        <script src="js/app.js"></script>
     </head>
     <body>
         <div class="bs-docs-example">

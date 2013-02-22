@@ -4,6 +4,8 @@
  */
 package net.saga.aerogear.aerogeardashboard;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.jboss.aerogear.controller.router.AbstractRoutingModule;
 import org.jboss.aerogear.controller.router.MediaType;
 import org.jboss.aerogear.controller.router.RequestMethod;
@@ -34,7 +36,7 @@ public void configuration() {
     route()
             .from("/pipes")
             .on(RequestMethod.POST, RequestMethod.PUT)
-            .consumes(JSON)
+            .consumes(JSON, HTML)
             .produces(JSON)
             .to(PipeController.class).addPipe(param(Pipe.class));
     
