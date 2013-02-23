@@ -12,6 +12,8 @@ import javax.inject.Inject;
 import org.jboss.aerogear.controller.router.MediaType;
 import org.jboss.aerogear.controller.router.RequestMethod;
 import org.jboss.aerogear.controller.router.RouteBuilder;
+import org.jboss.aerogear.controller.router.RouteBuilderImpl;
+import org.jboss.aerogear.controller.router.parameter.Parameter;
 
 /**
  *
@@ -37,8 +39,13 @@ public class PipeController {
     }
 
     private void addRoutes(Pipe pipe) {
-        RouteBuilder route = org.jboss.aerogear.controller.router.Routes.route();
-        route.from("/" + pipe.getName()).on(RequestMethod.GET).consumes(MediaType.ANY).produces(MediaType.JSON).to(DynamicsController.class).json(pipe.getName());
+        RouteBuilderImpl route = new RouteBuilderImpl();
+        route.from("/" + pipe.getName())
+             .on(RequestMethod.GET)
+             .consumes(MediaType.ANY)
+             .produces(MediaType.JSON)
+             .to(DynamicsController.class).json("");
+        route.getRouteDescriptor().addParameter(Parameter.param("someGibberishNameBecauseIWantADefaultValue", pipe.getName(), String.class));
         router.addRoute(route);
     }
     
