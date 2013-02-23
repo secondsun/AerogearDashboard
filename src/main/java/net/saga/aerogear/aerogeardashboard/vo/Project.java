@@ -2,27 +2,30 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.saga.aerogear.aerogeardashboard;
+package net.saga.aerogear.aerogeardashboard.vo;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
  *
  * @author summers
  */
-public class Pipe implements Serializable {
+@Entity
+public class Project implements Serializable{
     
     @Id
-    private int id = -1;
-
-    private String name;
+    private Long id;
     
-    public Pipe() {
+    private String name;
+
+    public Long getId() {
+        return id;
     }
 
-    Pipe(String name) {
-        this.name = name;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -31,16 +34,6 @@ public class Pipe implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-    
-    
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
     
     

@@ -13,7 +13,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific
  * language governing permissions and limitations under the License.
  */
-package net.saga.aerogear.aerogeardashboard;
+package net.saga.aerogear.aerogeardashboard.util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +82,7 @@ public class RuntimeRouter extends DefaultRouter {
         return runtimeRoutes.hasRouteFor(extractMethod(request), extractPath(request), extractAcceptHeader(request));
     }
 
-    void addRoute(RouteBuilder route) {
+    public void addRoute(RouteBuilder route) {
         builders.add(route);
         runtimeRoutes = org.jboss.aerogear.controller.router.Routes.from(builders);
     }

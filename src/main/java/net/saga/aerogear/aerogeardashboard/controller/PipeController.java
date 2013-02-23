@@ -2,13 +2,16 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.saga.aerogear.aerogeardashboard;
+package net.saga.aerogear.aerogeardashboard.controller;
 
 
+import net.saga.aerogear.aerogeardashboard.controller.DynamicsController;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import javax.inject.Inject;
+import net.saga.aerogear.aerogeardashboard.vo.Pipe;
+import net.saga.aerogear.aerogeardashboard.util.RuntimeRouter;
 import org.jboss.aerogear.controller.router.MediaType;
 import org.jboss.aerogear.controller.router.RequestMethod;
 import org.jboss.aerogear.controller.router.RouteBuilder;

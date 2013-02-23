@@ -4,6 +4,9 @@
  */
 package net.saga.aerogear.aerogeardashboard;
 
+import net.saga.aerogear.aerogeardashboard.controller.Home;
+import net.saga.aerogear.aerogeardashboard.vo.Pipe;
+import net.saga.aerogear.aerogeardashboard.controller.PipeController;
 import org.jboss.aerogear.controller.router.AbstractRoutingModule;
 import org.jboss.aerogear.controller.router.MediaType;
 import org.jboss.aerogear.controller.router.RequestMethod;
