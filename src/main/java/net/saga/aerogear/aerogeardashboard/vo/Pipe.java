@@ -5,16 +5,23 @@
 package net.saga.aerogear.aerogeardashboard.vo;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 /**
  *
  * @author summers
  */
+@Entity
 public class Pipe implements Serializable {
     
     @Id
-    private int id = -1;
+    @SequenceGenerator( name = "seq", sequenceName = "CAR_SEQ", allocationSize = 1, initialValue = 1 )
+    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "seq" )
+    private Long id;
 
     private String name;
     
@@ -35,11 +42,11 @@ public class Pipe implements Serializable {
     
     
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
     

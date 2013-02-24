@@ -13,7 +13,7 @@ import javax.persistence.PersistenceUnit;
  * @author summers
  */
 public class ProjectController {
-    @PersistenceUnit (unitName = "cars")
+    @PersistenceUnit (unitName = "AerogearDashboard")
     private EntityManagerFactory emf;
     
     @PreDestroy
