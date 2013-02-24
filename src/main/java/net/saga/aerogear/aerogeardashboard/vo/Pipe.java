@@ -19,7 +19,7 @@ import javax.persistence.SequenceGenerator;
 public class Pipe implements Serializable {
     
     @Id
-    @SequenceGenerator( name = "seq", sequenceName = "CAR_SEQ", allocationSize = 1, initialValue = 1 )
+    @SequenceGenerator( name = "seq", sequenceName = "CAR_SEQ", allocationSize = 10, initialValue = 100 )
     @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "seq" )
     private Long id;
 
