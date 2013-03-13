@@ -10,4 +10,8 @@ package net.saga.aerogear.aerogeardashboard.controller;
  */
 public class Home {
     public void index(){}
+
+    public void login() {
+        
+    }
 }

@@ -8,6 +8,6 @@ package net.saga.aerogear.aerogeardashboard.controller;
  *
  * @author summers
  */
-public class Home {
+public class Dashboard {
     public void index(){}
 }
